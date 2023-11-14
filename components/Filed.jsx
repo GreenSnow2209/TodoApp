@@ -1,14 +1,12 @@
 import React from 'react'
 import Item from './Item'
 
-const Filed = ({ list, query }) => {
+const Filed = ({ list }) => {
    
-  console.log("leg: ", query.length)
   return (
     <div className="field">
           {
-            list.filter((item) => item.title.toLowerCase().includes(query.toLowerCase()) )
-                .map((item, index) => <Item key={index} item={item} />)
+            list.map((item, index) => <Item key={index} item={item} />)
           }
     </div>
   )

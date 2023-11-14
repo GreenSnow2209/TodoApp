@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const Item = ({item}) => {
-  const [complete, setComplete] = useState(item.isCompleted);
+  const [complete, setComplete] = useState(item.isComplete);
 
    const handleComplete = (e) => {
       setComplete(e.target.checked)

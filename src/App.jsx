@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom"
 import Login from "./Login"
+import { TodoProvider } from './TodoContext';
 import TodoList from "./TodoList"
 import { loggin } from "../constant/data"
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<ProtectedRoute element={<TodoList />} />} />
+        <Route path="/" element={<ProtectedRoute element={<TodoProvider><TodoList /></TodoProvider>} />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </div>

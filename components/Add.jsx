@@ -4,9 +4,9 @@ const Add = ({ updateData }) => {
     const handleKeydown = (e) => {
         if(e.key == "Enter") {
            console.log("enter")
-           const newItem =  {title: e.target.value, isComplete: false};
-           if(newItem) {
-             updateData(newItem);
+           const newTodo =  {title: e.target.value, isComplete: false};
+           if(newTodo) {
+             updateData(newTodo);
            }
    
            e.target.value = "";
