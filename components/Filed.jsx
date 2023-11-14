@@ -1,12 +1,14 @@
 import React from 'react'
 import Item from './Item'
+import { useTodoContext } from '../src/TodoContext';
 
-const Filed = ({ list }) => {
+const Filed = () => {
+  const { state } = useTodoContext();
    
   return (
     <div className="field">
           {
-            list.map((item, index) => <Item key={index} item={item} />)
+            state.todos.map((item, index) => <Item key={index} item={item} />)
           }
     </div>
   )

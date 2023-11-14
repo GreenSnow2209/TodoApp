@@ -1,17 +1,22 @@
+import { useTodoContext } from '../src/TodoContext';
 
-const Add = ({ updateData }) => {
+const Add = () => {
+  const { state, dispatch } = useTodoContext();
     
-    const handleKeydown = (e) => {
-        if(e.key == "Enter") {
-           console.log("enter")
-           const newTodo =  {title: e.target.value, isComplete: false};
-           if(newTodo) {
-             updateData(newTodo);
-           }
-   
-           e.target.value = "";
-        };
-     }
+  const handleKeydown = (e) => {
+      if(e.key == "Enter") {
+          console.log("enter")
+          const newTodo =  {title: e.target.value, isComplete: false};
+          if(newTodo) {
+            dispatch({
+              type: 'ADD_TODO',
+              payload: newTodo,
+            });
+          }
+  
+          e.target.value = "";
+      };
+    }
 
 
   return (
